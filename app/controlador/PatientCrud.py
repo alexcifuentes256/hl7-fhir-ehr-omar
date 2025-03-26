@@ -15,6 +15,16 @@ def GetPatientById(patient_id: str):
     except Exception as e:
         return f"notFound", None
 
+def GetPatientByIdentifier(patientSystem,patientValue):
+    try:
+        patient = collection.find_one({"identifier.system": ObjectId(patient_id)})
+        if patient:
+            patient["_id"] = str(patient["_id"])
+            return "success", patient
+        return "notFound", None
+    except Exception as e:
+        return f"notFound", None
+
 def WritePatient(patient_dict: dict):
     try:
         pat = Patient.model_validate(patient_dict)
