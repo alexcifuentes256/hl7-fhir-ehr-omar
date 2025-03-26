@@ -15,15 +15,16 @@ def GetPatientById(patient_id: str):
     except Exception as e:
         return f"notFound", None
 
-def GetPatientByIdentifier(patientSystem,patientValue):
+
+def GetPatientByIdentifier(patientSystem,patientValue)
     try:
-        patient = collection.find_one({"identifier.system": ObjectId(patient_id)})
+        patient = collection.find_one(("identifier.system";patientSystem,"identifier.value";patientValue))
         if patient:
-            patient["_id"] = str(patient["_id"])
+            patient["_id"]=str(patient["_id"])
             return "success", patient
-        return "notFound", None
+        return "notfound", None
     except Exception as e:
-        return f"notFound", None
+        return f"notfound", None
 
 def WritePatient(patient_dict: dict):
     try:
