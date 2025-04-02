@@ -15,7 +15,7 @@ app.add_middleware(
 
 @app.get("/patient/{patient_id}", response_model=dict)
 async def get_patient_by_id(patient_id: str):
-    status,patient = GetPatientById(patient_id):
+    status,patient = GetPatientById(patient_id)
     if status=='success':
         return patient  # Return patient
     elif status=='notFound':
