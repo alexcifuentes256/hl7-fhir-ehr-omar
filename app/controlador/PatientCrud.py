@@ -15,7 +15,7 @@ def GetPatientById(patient_id: str):
     except Exception as e:
         return f"notFound", None
         
-def GetPatientByIdentifier(patientSystem,patientValue)
+def GetPatientByIdentifier(patientSystem,patientValue):
     try:
         patient = collection.find_one(("identifier.system";patientSystem,"identifier.value";patientValue))
         if patient:
